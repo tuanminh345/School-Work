@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+//if Number is devisable by 4, remainder == 0
+//if Number is devisable by 100, remainder == 0
+//if Number if divisible by 400, leap year
+
+//Tonote to self spacing matters 
+//   if (Terms%4==0&&Terms%100!=0||Terms%400==0) is differnent from 
+//   if (Terms%4 == 0&& Terms%100 !=0 || Terms%400 ==0 ) 
+int main()
+{
+  int StartYear, EndYear, Terms,NumTerms, NumLeapYear; 
+  cout << "Starting year: " << endl; 
+  cin >> StartYear; 
+  cout << "Ending year" << endl;
+  cin >> EndYear;
+  cout << "Leap years between " << StartYear << " and " << EndYear << endl; 
+  //loop Setup
+  // From Start Year, Check off the conditions, if one error, StartYear +1, and start over
+  for (Terms = StartYear; Terms <= EndYear; Terms++)
+    {
+     if (Terms%4==0&&Terms%100!=0||Terms%400==0){  
+       //if the term is devisable by 4 and is not devisable by 100  print // if term is devisable by 4 and is devisable by 400 print!
+    cout << Terms <<"\n";
+       }
+      
+      }
+}
