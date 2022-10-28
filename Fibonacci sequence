@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int fibonacci(int i)
+{ 
+  if(i==1||i==2) // for the first 2 terms
+    return 1;
+  else 
+    return(fibonacci(i-1) +fibonacci(i-2)); //Fibonacci Equation loaded in for term 3 and onwards
+}
+int main()
+{
+  int Number,Total,sum,Term;
+    cout << "*****" << endl; 
+    cout << "********" << endl;
+    cout << "*************" << endl;
+     //setting up the for loop
+      int n = 44; //to what term we want the code to go
+      Number = 0; 
+        int x=10; // containless than x digits.
+   n=(x-1)*5-1; // Fibonnaci to the xth term. 
+      Total = 0; // the toal sum is being added in the background
+        
+  for ( int Term = 1; Term <= n; Term++) // loop statement for fibonacci
+{
+  
+        Number= Number + 1; 
+        int fibonaci(Term); //recalling 
+        cout <<"Term" <<setw(3) << Number << ": " << setw(9) << fibonacci(Term) <<" \n" ; 
+  
+        Total = fibonacci(Term) + Total; // adding of terms to create the total sum
+  
+}
+cout << endl;
+cout << " *********************" << endl;
+  cout << "The sum of the 44 terms: " << Total <<endl;
+cout << "**********************************/n"; 
+
+
+
+
+}
+
