@@ -1,0 +1,132 @@
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+#include <iomanip>
+using namespace std; 
+
+/////Recall function for "/\" sign
+
+void multistring(double n) // 
+{  
+  int i;
+if (n<= 1000000000){ /// n <= 1000000000 cause the function will always be true 
+  for(i =1;i <=n; ++i){cout << "/\\" ;}
+  }
+  
+}
+
+/////Recall function for "\/" sign
+
+void multistring2(double n)   
+{
+  int i;
+if (n<= 1000000000){  /// n <= 1000000000 cause the function will always be true 
+  for(i =1;i <=n; ++i){cout << "\\/" ;}
+  }
+  
+}
+
+//////Start of program
+
+int main()
+{
+///// Gather User input for Size of Rocket
+  int Size,TermNum,SpaceBarSpaceing,RepeteAmount,y,i,Add,h;
+  cout << "Size: ";
+  cin >> Size;
+///// CONE of ROCKET 
+  int Pattern = ((Size-3)*2)+7;
+  SpaceBarSpaceing=Size*2+2; // amount of white space
+  RepeteAmount = Size*2;  // how many times i want the loop to repete 
+
+  for (TermNum= 1; TermNum<= Pattern; TermNum++){
+      if (TermNum >=3) { 
+      
+        y = SpaceBarSpaceing-TermNum; 
+        if (y == 0){
+          cout << " " << string(TermNum,'/') << "**" << string(TermNum,'\\') << endl; 
+        }
+        else {
+          cout<< string(y,' ') << string(TermNum-2,'/') << "**" << string(TermNum-2,'\\') << endl;
+          }
+        }
+       else {
+        cout <<endl; // to skip the first two lines. 
+      }
+} 
+  
+///// Seperator +=*=*=*=*=*=*=*=*=*=*+
+ cout << "+";for (i= 1; i<= RepeteAmount;i++) {cout <<"=*";}cout << "+" << endl;
+  
+///// Upper half of diamond1
+  for (i= 1; i<= RepeteAmount;i++) {
+      if(i == Size)
+      {
+            cout << "|"; multistring(i); multistring(i); cout << "|" << endl;
+      }
+      else if(i < Size)
+      {
+      cout << "|" << string(Size-i,'.'); multistring(i); cout << string((Size-i)*2,'.'); multistring(i); cout << string(Size-i,'.') << "|" << endl;
+          }
+      }
+///// Lower half of diamond1
+        for (h= 0; h<= RepeteAmount/2-1;h++) {
+  if(h == 0){
+    cout << "|"; multistring2(Size); multistring2(Size); cout << "|" << endl;
+      }
+      else {
+  cout << "|" << string(h,'.'); multistring2(Size-h); cout << string(h*2,'.'); multistring2(Size-h); cout << string(h,'.') << "|" << endl;
+          }
+
+          }
+
+/////Seperator +=*=*=*=*=*=*=*=*=*=*+
+
+  
+ cout << "+";for (i= 1; i<= RepeteAmount;i++) {cout <<"=*";}cout << "+" << endl;
+  
+///// Upper half of diamond2 (same code as lower half of D1)
+
+      for (h= 0; h<= RepeteAmount/2-1;h++) {
+  if(h == 0){
+            cout << "|"; multistring2(Size); multistring2(Size); cout << "|" << endl;
+      }
+      else {
+        
+      cout << "|" << string(h,'.'); multistring2(Size-h); cout << string(h*2,'.'); multistring2(Size-h); cout << string(h,'.') << "|" << endl;
+
+        }
+  
+  }
+///// Lower half of diamond2 (same code as top half of D1)
+    for (i= 1; i<= RepeteAmount;i++) {
+      if(i == Size){
+            cout << "|"; multistring(i); multistring(i); cout << "|" << endl;
+      }
+      else if(i < Size){
+      cout << "|" << string(Size-i,'.'); multistring(i); cout << string((Size-i)*2,'.'); multistring(i); cout << string(Size-i,'.') << "|" << endl;
+          }
+      }
+
+
+////// Seperator +=*=*=*=*=*=*=*=*=*=*+
+  cout << "+";  for (i= 1; i<= RepeteAmount;i++) {cout <<"=*";} cout << "+" << endl;
+
+// Tail of Rocket (same as cone)
+  
+  for (TermNum= 1; TermNum<= Pattern; TermNum++){
+   
+      if (TermNum >=3) { 
+    
+        y = SpaceBarSpaceing-TermNum; 
+        if (y == 0){
+          cout << " " << string(TermNum,'/') << "**" << string(TermNum,'\\'); 
+        }
+        else {
+          cout<< string(y,' ') << string(TermNum-2,'/') << "**" << string(TermNum-2,'\\') <<endl;
+          }
+        }
+    
+      }
+} 
+  
